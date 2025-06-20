@@ -80,4 +80,4 @@ net_last_active_budget_local,
 cc_paid_sp_clicks,
 source_targeting
 from 
-    dataos://sstdepot:hs_sst/sp_location_advertiser_campaign
+     dataos://sstdepot:hs_sst/sp_location_advertiser_campaign

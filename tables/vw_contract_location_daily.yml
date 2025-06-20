@@ -180,6 +180,7 @@ tables:
         type: number 
         description: Average of days since last activity
 
+
       - name: distinct_contract_number
         sql: contract_number
         type: Distinct_count

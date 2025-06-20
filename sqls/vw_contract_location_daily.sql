@@ -71,4 +71,4 @@ SELECT
     COUNTRY,
     DS
 from 
-    dataos://sstdepot:HS_SST/VW_CONTRACT_LOCATION_DAILY
+     dataos://sstdepot:HS_SST/VW_CONTRACT_LOCATION_DAILY
