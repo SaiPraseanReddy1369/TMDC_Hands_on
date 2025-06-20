@@ -1,0 +1,219 @@
+tables:
+  - name: SF_ACCOUNT_DAILY
+    sql: {{ load_sql('sf_account_daily') }}
+    description: Captures details of users and their visits
+    public: true 
+
+    dimensions:
+      - name: ID
+        type: string
+        column: ID
+        description: "id"
+        primary_key: true
+
+      - name: DELETE_FLAG
+        type: string
+        column: DELETE_FLAG
+        description: "if it is deleted or not"
+
+      - name: NAMEX
+        type: string
+        column: NAMEX
+        description: "name of the account"
+
+      - name: RECORDTYPEID
+        type: number
+        column: RECORDTYPEID
+        description: "id"
+
+      - name: PARENTID
+        type: string
+        column: PARENTID
+        description: "id"
+
+      - name: GEO_ID
+        type: number
+        column: GEO_ID
+        description: "id"
+      
+      - name: BILLINGCOUNTRY
+        type: string
+        column: BILLINGCOUNTRY
+        description: "Country where billing took place"
+
+      - name: OWNERID
+        type: string
+        column: OWNERID
+        description: "id"
+      
+      - name: LOCATION_ID
+        type: number
+        column: LOCATION_ID
+        description: "id of the location"
+        
+      - name: ON_SELLING_ACCOUNT
+        type: boolean
+        column: ON_SELLING_ACCOUNT
+        description: "if its a selling account or not"
+
+      - name: REGION
+        type: string
+        column: REGION
+        description: "region information"
+
+      - name: TARGET_PROPERTY
+        type: string
+        column: TARGET_PROPERTY
+        description: "info about the property"
+
+      - name: DO_NOT_CALL_KEY_ACCOUNT
+        type: boolean
+        column: DO_NOT_CALL_KEY_ACCOUNT
+        description: "yes or no info about call key"
+
+      - name: BUSINESS_OWNER
+        type: string
+        column: BUSINESS_OWNER
+        description: "name of the business owner"
+
+      - name: BUSINESS_TYPE
+        type: string
+        column: BUSINESS_TYPE
+        description: "type of business"
+      
+      - name: ROI_VALUE_SEGMENT
+        type: string
+        column: ROI_VALUE_SEGMENT
+        description: "ROI segmentation"
+
+      - name: AUTO_RENEW 
+        type: boolean
+        column: AUTO_RENEW 
+        description: "yes or no for auto renewal"
+
+      - name: BUSINESS_LISTING_PURCHASE_DATE
+        type: time
+        column: BUSINESS_LISTING_PURCHASE_DATE
+        description: "date of purchase"
+
+      - name: BUSINESS_LISTING_RENEWAL_DATE
+        type: time
+        column: BUSINESS_LISTING_RENEWAL_DATE
+        description: "date of renewal"
+      
+      - name: COMMERCE_NEW 
+        type: number
+        column: COMMERCE_NEW 
+        description: "new commerce value"
+      
+      - name: DAYS_SINCE_LAST_ACTIVITY
+        type: number
+        column: DAYS_SINCE_LAST_ACTIVITY
+        description: "no of days since last activity"
+
+      - name: LAST_ACTIVITY_DATE
+        type: time
+        column: LAST_ACTIVITY_DATE
+        description: "date of last activity"
+      
+      - name: LAST_PAID_PRICE_LOCAL 
+        type: number
+        column: LAST_PAID_PRICE_LOCAL 
+        description: "local price on last paid"
+
+      - name: LAST_PAID_PRICE_USD
+        type: number
+        column:  LAST_PAID_PRICE_USD
+        description: "usa pricing for last paid"
+      
+      - name: LATEST_ABANDON_CART
+        type: time
+        column: LATEST_ABANDON_CART
+        description: "datetime column"
+
+      - name: LATEST_MARKETING_ENGAGEMENT
+        type: time
+        column: LATEST_MARKETING_ENGAGEMENT
+        description: "datetime column"
+
+      - name:  LEAD_SCORE_NEW 
+        type: number
+        column:  LEAD_SCORE_NEW 
+        description: "new lead score"
+
+      - name: PSP_CURRENCY_CODE
+        type: string
+        column: PSP_CURRENCY_CODE
+        description: "currency code"
+
+      - name:  OWNERID_18
+        type: string
+        column:  OWNERID_18
+        description: "id"
+
+      - name:  SUB_REGION
+        type: string
+        column:  SUB_REGION
+        description: "sub region details"
+
+      - name: SERVICE_TIER
+        type: string
+        column: SERVICE_TIER
+        description: "segregation of service tier"
+      
+      - name: DIGITAL_ADVERTISING_SEGMENT
+        type: string
+        column: DIGITAL_ADVERTISING_SEGMENT
+        description: "different segements of digital advertising"
+
+      - name: DS
+        type: time
+        column: DS
+        description: "date"
+
+      - name: ACCOUNT_COUNTRY
+        type: string
+        column: ACCOUNT_COUNTRY
+        description: "account country name"
+
+      - name: INDUSTRY
+        type: string
+        column:   INDUSTRY
+        description: "industry type"
+
+      - name: HYBRID 
+        type: boolean
+        column: HYBRID 
+        description: "if it is hybrid or not"
+
+      - name: PARENT_BRAND
+        type: string
+        column:  PARENT_BRAND
+        description: "name of parent brand"
+      
+      - name: PIO_CREDIT_STATUS 
+        type: string
+        column: PIO_CREDIT_STATUS 
+        description: "status"
+
+      - name: LATEST_OWNER_ENGAGEMENT 
+        type: time
+        column:  LATEST_OWNER_ENGAGEMENT 
+        description: "datetime column"
+
+      - name: ESTIMATED_CURRENT_VALUE
+        type: number
+        column:  ESTIMATED_CURRENT_VALUE
+        description: "current value estimation"
+
+      - name: MIGRATIONID  
+        type: string
+        column:  MIGRATIONID 
+        description: "id"
+  
+    measure:
+
+      - name: DISTINCT_DELETE_FLAG
+        sql: DELETE_FLAG
+        type: count_distinct 
+        description: Total distinct delete flag

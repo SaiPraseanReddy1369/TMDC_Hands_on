@@ -1,0 +1,415 @@
+tables:
+  - name: SP_LOCATION_ADVERTISER_CAMPAIGN
+    sql: {{ load_sql('sp_location_advertiser_campaign') }}
+    description: Captures details of advertisers and campaigns
+    public: true 
+
+    dimensions:
+      - name: location_id
+        type: number
+        column: location_id
+        description: "location id"
+        primary_key: true
+
+      - name: sl_advertiser_id
+        type: number
+        column: sl_advertiser_id
+        description: "sl advertiser id"
+
+      - name: sl_campaign_id
+        type: number
+        column: sl_campaign_id
+        description: "sl_campaign_id"
+
+      - name: campaign_type_id
+        type: number
+        column: campaign_type_id
+        description: "campaign_type_id"
+
+      - name: sales_assisted
+        type: boolean
+        column: sales_assisted
+        description: "sales_assisted"
+
+      - name: provider_name
+        type: string
+        column: provider_name
+        description: "provider_name"
+
+      - name: advertiser_name
+        type: string
+        column: advertiser_name
+        description: "advertiser_name"
+
+      - name: is_enterprise
+        type: boolean
+        column: is_enterprise
+        description: "is_enterprise"
+
+      - name: mp_direct_booking
+        type: boolean
+        column: mp_direct_booking
+        description: "mp_direct_booking"
+
+      - name: mp_ota
+        type: boolean
+        column: mp_ota
+        description: "mp_ota"
+		
+      - name: campaign_calculated_status
+        type: string
+        column: campaign_calculated_status
+        description: "campaign_calculated_status"
+		  
+      - name: selected_campaign
+        type: number
+        column: selected_campaign
+        description: "selected_campaign"
+
+      - name: placetypeid
+        type: number
+        column: placetypeid
+        description: "placetypeid"
+
+      - name: budget_type
+        type: string
+        column: budget_type
+        description: "budget_type"
+
+      - name: day_end_budget_usd
+        type: number
+        column: day_end_budget_usd
+        description: "day_end_budget_usd"
+
+      - name: day_end_budget_local
+        type: number
+        column: day_end_budget_local
+        description: "day_end_budget_local"
+
+      - name: last_active_budget_usd
+        type: number
+        column: last_active_budget_usd
+        description: "last_active_budget_usd"
+
+      - name: last_active_budget_local
+        type: number
+        column: last_active_budget_local
+        description: "last_active_budget_local"
+		
+      - name: day_end_goal_percentage
+        type: number
+        column: day_end_goal_percentage
+        description: "day_end_goal_percentage"
+		  
+      - name: cpc_usd
+        type: number
+        column: cpc_usd
+        description: "cpc_usd"
+
+      - name: cpc_local
+        type: number
+        column: cpc_local
+        description: "cpc_local"
+
+      - name: currency
+        type: string
+        column: currency
+        description: "currency"
+
+      - name: start_date
+        type: time
+        column: start_date
+        description: "start_date"
+
+      - name: end_date
+        type: time
+        column: end_date
+        description: "end_date"
+
+      - name: order_goal
+        type: number
+        column: order_goal
+        description: "order_goal"
+
+      - name: even_pace_daily_goal
+        type: string
+        column: even_pace_daily_goal
+        description: "even_pace_daily_goal"
+		  
+      - name: even_pace_daily_budget_goal_usd
+        type: number
+        column: even_pace_daily_budget_goal_usd
+        description: "even_pace_daily_budget_goal_usd"
+	    
+      - name: even_pace_daily_budget_goal_local
+        type: number
+        column: even_pace_daily_budget_goal_local
+        description: "even_pace_daily_budget_goal_local"
+
+      - name: bid_lever_strategy
+        type: string
+        column: bid_lever_strategy
+        description: "bid_lever_strategy"
+
+      - name: targeting_count
+        type: number
+        column: targeting_count
+        description: "targeting_count"
+
+      - name: blackout_targeting
+        type: number
+        column: blackout_targeting
+        description: "blackout_targeting"
+
+      - name: weekend_targeting
+        type: number
+        column: weekend_targeting
+        description: "weekend_targeting"
+
+      - name: weekday_targeting
+        type: number
+        column: weekday_targeting
+        description: "weekday_targeting"
+		  
+      - name: salesforce_account_id
+        type: string
+        column: salesforce_account_id
+        description: "salesforce_account_id"
+		  
+      - name: salesforce_opportunity_id
+        type: string
+        column: salesforce_opportunity_id
+        description: "salesforce_opportunity_id"
+
+      - name: cc_sp_clicks
+        type: number
+        column: cc_sp_clicks
+        description: "cc_sp_clicks"
+
+      - name: cc_sp_revenue
+        type: number
+        column: cc_sp_revenue
+        description: "cc_sp_revenue"
+
+      - name: sp_net_revenue
+        type: number
+        column: sp_net_revenue
+        description: "sp_net_revenue"
+
+      - name: passed_offers_filter
+        type: number
+        column: passed_offers_filter
+        description: "passed_offers_filter"
+
+      - name: passed_availability_filter
+        type: number
+        column: passed_availability_filter
+        description: "passed_offers_filter"
+		  
+      - name: passed_user_filters
+        type: number
+        column: passed_user_filters
+        description: "passed_offers_filter"
+		
+      - name: passed_initial_candidates
+        type: number
+        column: passed_initial_candidates
+        description: "passed_initial_candidates"
+
+      - name: passed_final_candidates
+        type: number
+        column: passed_final_candidates
+        description: "passed_final_candidates"
+
+      - name: filtered_offers_filter
+        type: number
+        column: filtered_offers_filter
+        description: "filtered_offers_filter"
+
+      - name: filtered_availability_filter
+        type: number
+        column: filtered_availability_filter
+        description: "filtered_availability_filter"
+
+      - name: filtered_user_filters
+        type: number
+        column: filtered_user_filters
+        description: "filtered_user_filters"
+
+      - name: filtered_initial_candidates
+        type: number
+        column: filtered_initial_candidates
+        description: "filtered_initial_candidates"
+		  
+      - name: filtered_final_candidates
+        type: number
+        column: filtered_final_candidates
+        description: "filtered_final_candidates"
+		  
+      - name: ds
+        type: time
+        column: ds
+        description: "date info"
+
+      - name: billing_account_id
+        type: number
+        column: billing_account_id
+        description: "billing_account_id"
+
+      - name: contract_number
+        type:  string
+        column: contract_number
+        description: "contract_number"
+
+      - name: location_id_targeting
+        type: number
+        column: location_id_targeting
+        description: "location_id_targeting"
+
+      - name: has_photos_targeting
+        type: number
+        column: has_photos_targeting
+        description: "has_photos_targeting"
+
+      - name: rest_style_targeting
+        type: number
+        column: rest_style_targeting
+        description: "rest_style_targeting"
+		  
+      - name: diet_restrict_targeting
+        type: number
+        column: diet_restrict_targeting
+        description: "diet_restrict_targeting"
+		
+      - name: price_type_targeting
+        type: number
+        column: price_type_targeting
+        description: "price_type_targeting"
+
+      - name: dining_option_targeting
+        type: number
+        column: dining_option_targeting
+        description: "dining_option_targeting"
+
+      - name: meal_type_targeting
+        type: number
+        column: meal_type_targeting
+        description: "meal_type_targeting"
+
+      - name: cuisine_targeting
+        type: number
+        column: cuisine_targeting
+        description: "cuisine_targeting"
+
+      - name: estab_type_targeting
+        type: number
+        column: estab_type_targeting
+        description: "estab_type_targeting"
+
+      - name: geo_id_targeting
+        type: number
+        column: geo_id_targeting
+        description: "geo_id_targeting"
+			    
+      - name: geohex_cell_targeting
+        type: number
+        column: geohex_cell_targeting
+        description: "geohex_cell_targeting"
+	    
+      - name: geo_targeting
+        type: number
+        column: geo_targeting
+        description: "geo_targeting"
+
+      - name: mobile_device_targeting
+        type:  number
+        column: mobile_device_targeting
+        description: "mobile_device_targeting"
+
+      - name: desktop_device_targeting
+        type: number
+        column: desktop_device_targeting
+        description: "desktop_device_targeting"
+
+      - name: mobile_device_and_country_targeting
+        type: number
+        column: mobile_device_and_country_targeting
+        description: "mobile_device_and_country_targeting"
+
+      - name: desktop_device_and_country_targeting
+        type: number
+        column: desktop_device_and_country_targeting
+        description: "desktop_device_and_country_targeting"
+
+      - name: dta_targeting
+        type: number
+        column: dta_targeting
+        description: "dta_targeting"		
+	    
+      - name: include_commerce_country_targeting
+        type:  number
+        column: include_commerce_country_targeting
+        description: "include_commerce_country_targeting"	
+	    
+      - name: commerce_country_targeting
+        type: number
+        column: commerce_country_targeting
+        description: "commerce_country_targeting"
+			    
+      - name: covid_targeting
+        type: number
+        column: covid_targeting
+        description: "covid_targeting"
+		    
+      - name: discount_type
+        type: string
+        column: discount_type
+        description: "discount_type"		
+	    
+      - name: discount_amount
+        type: number
+        column: discount_amount
+        description: "discount_amount"
+		    
+      - name: net_day_end_budget_usd
+        type: number
+        column: net_day_end_budget_usd
+        description: "net_day_end_budget_usd"
+		    
+      - name: net_day_end_budget_local
+        type: number
+        column: net_day_end_budget_local
+        description: "net_day_end_budget_local"
+		    
+      - name: net_even_pace_daily_budget_goal_usd
+        type: number
+        column: net_even_pace_daily_budget_goal_usd
+        description: "net_even_pace_daily_budget_goal_usd"
+		    
+      - name: net_even_pace_daily_budget_goal_local
+        type: number
+        column: net_even_pace_daily_budget_goal_local
+        description: "net_even_pace_daily_budget_goal_local"
+		    
+      - name: net_last_active_budget_usd
+        type: number
+        column: net_last_active_budget_usd
+        description: "net_last_active_budget_usd"
+		    
+      - name: net_last_active_budget_local
+        type: number
+        column: net_last_active_budget_local
+        description: "net_last_active_budget_local"
+			    
+      - name: cc_paid_sp_clicks
+        type: number
+        column: cc_paid_sp_clicks
+        description: "cc_paid_sp_clicks"
+		  
+      - name: source_targeting
+        type: number
+        column: source_targeting
+        description: "source_targeting"
+		
+		
+		

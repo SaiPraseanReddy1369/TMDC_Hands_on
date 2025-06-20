@@ -1,0 +1,42 @@
+tables:
+  - name: HS_PRODUCT_GROUPS
+    sql: {{ load_sql('hs_product_groups') }}
+    description: Captures details of product groups
+    public: true 
+
+    dimensions:
+      - name: ID
+        type: number
+        column: ID
+        description: "ID"
+        primary_key: true
+
+      - name: PRODUCT_CLASS
+        type: string
+        column: PRODUCT_CLASS
+        description: "class of the product"
+
+      - name: PRODUCT_DEPARTMENT
+        type: string
+        column: PRODUCT_DEPARTMENT
+        description: "which department the product belongs to"
+
+      - name: PRODUCT_DESCRIPTION
+        type: string
+        column: PRODUCT_DESCRIPTION
+        description: "description of the product"
+
+      - name: PRODUCT_DIVISION
+        type: string
+        column: PRODUCT_DIVISION
+        description: "division group of product"
+
+      - name: PRODUCT_FAMILY
+        type: string
+        column: PRODUCT_FAMILY
+        description: "family of the product"
+      
+      - name: SKU
+        type: string
+        column: SKU
+        description: "code value"

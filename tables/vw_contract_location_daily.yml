@@ -1,0 +1,202 @@
+tables:
+  - name: VW_CONTRACT_LOCATION_DAILY
+    sql: {{ load_sql('vw_contract_location_daily') }}
+    description: Table containing information about vw_contract_location_daily.
+    public: true
+
+    joins:
+      - name: BA_CPC_CLICK
+        relationship: one_to_many
+        sql: "{TABLE.PRODUCT} = {BA_CPC_CLICK.PRODUCT}"
+
+      - name: HS_PRODUCT_GROUPS
+        relationship: one_to_many
+        sql: "{TABLE.PRODUCT} = {HS_PRODUCT_GROUPS.SKU}"
+
+      - name: SF_ACCOUNT_DAILY
+        relationship: one_to_many
+        sql: "{TABLE.LOCATION_ID} = {SF_ACCOUNT_DAILY.LOCATION_ID}"
+
+      - name: SP_LOCATION_ADVERTISER_CAMPAIGN
+        relationship: one_to_many
+        sql: "{TABLE.LOCATION_ID} = {SP_LOCATION_ADVERTISER_CAMPAIGN.LOCATION_ID} AND 
+              {TABLE.CONTRACT_NUMBER} = {SP_LOCATION_ADVERTISER_CAMPAIGN.CONTRACT_NUMBER}"
+
+    dimensions:
+      - name: CONTRACT_NUMBER
+        type: string
+        column: CONTRACT_NUMBER
+        description: "Contract number"
+
+      - name: DAY_START_CONTRACT_STATUS
+        type: string
+        column: DAY_START_CONTRACT_STATUS
+        description: "Contract status at the start of the day"
+
+      - name: DAY_END_CONTRACT_STATUS
+        type: string
+        column: DAY_END_CONTRACT_STATUS
+        description: "Contract status at the end of the day"
+
+      - name: LOCATION_ID
+        type: string
+        column: LOCATION_ID
+        description: "Location ID"
+
+      - name: PRODUCT
+        type: string
+        column: PRODUCT
+        description: "Product"
+
+      - name: PRODUCT_DESCRIPTION
+        type: string
+        column: PRODUCT_DESCRIPTION
+        description: "Description of the product"
+
+      - name: BILLING_ACCOUNT_ID
+        type: string
+        column: BILLING_ACCOUNT_ID
+        description: "Billing account ID"
+
+      - name: CHARGE_MODEL
+        type: string
+        column: CHARGE_MODEL
+        description: "Charge model used"
+
+      - name: TERM_START_DATE
+        type: time
+        column: TERM_START_DATE
+        description: "Contract term start date"
+
+      - name: TERM_END_DATE
+        type: time
+        column: TERM_END_DATE
+        description: "Contract term end date"
+
+      - name: BILLING_CURRENCY_CODE
+        type: string
+        column: BILLING_CURRENCY_CODE
+        description: "Currency code for billing"
+
+      - name: TERM_START
+        type: boolean
+        column: TERM_START
+        description: "Flag if it's the start of the term"
+
+      - name: TERM_END
+        type: boolean
+        column: TERM_END
+        description: "Flag if it's the end of the term"
+
+      - name: CONTRACT_FREE_TRIAL
+        type: boolean
+        column: CONTRACT_FREE_TRIAL
+        description: "Is the contract a free trial?"
+
+      - name: CALCULATED_LOCATIONS
+        type: number
+        column: CALCULATED_LOCATIONS
+        description: "Number of locations calculated"
+
+      - name: CALCULATED_STATUS
+        type: string
+        column: CALCULATED_STATUS
+        description: "Calculated contract status"
+
+      - name: CONTRACT_BILLING_UNIT_NET_AMT_PER_LOCATION_USD
+        type: number
+        column: CONTRACT_BILLING_UNIT_NET_AMT_PER_LOCATION_USD
+        description: "Net amount per billing unit per location in USD"
+
+      - name: CAMPAIGNS
+        type: string
+        column: CAMPAIGNS
+        description: "Campaign information"
+
+      - name: CONTRACT_START_DATE
+        type: time
+        column: CONTRACT_START_DATE
+        description: "Start date of the contract"
+
+      - name: CANCELLATION_DS
+        type: time
+        column: CANCELLATION_DS
+        description: "Cancellation date"
+
+      - name: CANCELLATION_REASON
+        type: string
+        column: CANCELLATION_REASON
+        description: "Reason for cancellation"
+
+      - name: AUTO_RENEW
+        type: boolean
+        column: AUTO_RENEW
+        description: "Indicates auto-renewal"
+
+      - name: PLACE_TYPE
+        type: string
+        column: PLACE_TYPE
+        description: "Type of place"
+
+      - name: CONTINENT_NAME
+        type: string
+        column: CONTINENT_NAME
+        description: "Continent"
+
+      - name: COUNTRY
+        type: string
+        column: COUNTRY
+        description: "Country"
+
+      - name: DS
+        type: time
+        column: DS
+        description: "Date"
+
+      - name: contract_number
+        type: string
+        column: "{SP_LOCATION_ADVERTISER_CAMPAIGN.contract_number}"
+        description: "contract number"
+
+      - name: sp_net_revenue
+        type: number
+        column: "{SP_LOCATION_ADVERTISER_CAMPAIGN.sp_net_revenue}"
+        description: "sp_net_revenue"
+
+      - name: DAYS_SINCE_LAST_ACTIVITY
+        type: number
+        column: "{SF_ACCOUNT_DAILY.DAYS_SINCE_LAST_ACTIVITY}"
+        description: "no of days since last activity"
+
+      - name: CONTRACT_TOTAL_AMT_USD
+        type: number
+        column: CONTRACT_TOTAL_AMT_USD
+        description: "CONTRACT_TOTAL_AMT_USD"
+    
+    measures:
+
+      - name: revenue_to_contract_ratio
+        sql: SUM({TABLE.sp_net_revenue}-{TABLE.contract_total_amt_usd}) 
+        type: number 
+        description: Average of days since last activity
+
+      - name: distinct_contract_number
+        sql: contract_number
+        type: Distinct_count
+        description: distinct count
+
+      - name: distinct_location_id
+        sql: location_id
+        type: Distinct_count
+        description: distinct count of location id
+
+      - name: contract_coverage_pct
+        sql: distinct_contract_number/distinct_location_id
+        type: count
+        description: count of contract coverage
+
+      - name: avg_days_since_last_activity
+        sql: days_since_last_activity
+        type: average
+        description: count of contract coverage
+

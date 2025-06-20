@@ -1,0 +1,42 @@
+tables:
+  - name: BA_CPC_CLICK
+    sql: {{ load_sql('ba_cpc_click') }}
+    description: Captures details of ba clicks
+    public: true 
+
+    dimensions:
+      - name: location_id
+        type: number
+        column: location_id
+        description: "location id"
+        primary_key: true
+
+      - name: contract_number
+        type: string
+        column: contract_number
+        description: "contract number"
+
+      - name: billing_account_id
+        type: number
+        column: billing_account_id
+        description: "billing account id"
+
+      - name: product
+        type: string
+        column: product
+        description: "product name"
+
+      - name: ba_clicks
+        type: number
+        column: ba_clicks
+        description: "ba click number"
+
+      - name: delivered_ba_cpc_net_usd
+        type: number
+        column: delivered_ba_cpc_net_usd
+        description: "currency in usd"
+
+      - name: ds
+        type: time
+        column: ds
+        description: "date info"
