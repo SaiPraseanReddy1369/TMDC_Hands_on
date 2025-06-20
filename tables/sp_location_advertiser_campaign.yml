@@ -181,7 +181,6 @@ tables:
         column: salesforce_opportunity_id
         description: "salesforce_opportunity_id"
 
-
       - name: cc_sp_clicks
         type: number
         column: cc_sp_clicks

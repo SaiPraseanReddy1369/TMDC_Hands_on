@@ -4,7 +4,6 @@ tables:
     description: Captures details of ba clicks
     public: true 
 
-
     dimensions:
       - name: location_id
         type: number
