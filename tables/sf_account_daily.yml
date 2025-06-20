@@ -4,6 +4,7 @@ tables:
     description: Captures details of users and their visits
     public: true 
 
+
     dimensions:
       - name: ID
         type: string

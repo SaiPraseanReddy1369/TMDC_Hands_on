@@ -183,7 +183,7 @@ tables:
       - name: distinct_contract_number
         sql: contract_number
         type: Distinct_count
-        description: distinct count
+        description: distinct count.
 
       - name: distinct_location_id
         sql: location_id

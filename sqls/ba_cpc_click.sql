@@ -5,4 +5,5 @@ product,
 ba_clicks,
 delivered_ba_cpc_net_usd,
 ds
+
 from  dataos://sstdepot:HS_SST/ba_cpc_click

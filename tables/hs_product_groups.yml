@@ -4,6 +4,7 @@ tables:
     description: Captures details of product groups
     public: true 
 
+
     dimensions:
       - name: ID
         type: number

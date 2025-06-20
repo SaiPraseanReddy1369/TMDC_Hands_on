@@ -70,4 +70,5 @@ SELECT
     CONTINENT_NAME,
     COUNTRY,
     DS
-from dataos://sstdepot:HS_SST/VW_CONTRACT_LOCATION_DAILY
+from 
+dataos://sstdepot:HS_SST/VW_CONTRACT_LOCATION_DAILY
