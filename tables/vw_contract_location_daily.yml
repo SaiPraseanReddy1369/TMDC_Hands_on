@@ -183,12 +183,12 @@ tables:
 
       - name: distinct_contract_number
         sql: contract_number
-        type: Distinct_count
+        type: countDistinct
         description: distinct count
 
       - name: distinct_location_id
         sql: location_id
-        type: Distinct_count
+        type: countDistinct
         description: distinct count of location id
 
       - name: contract_coverage_pct
