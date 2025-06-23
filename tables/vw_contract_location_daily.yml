@@ -198,6 +198,6 @@ tables:
 
       - name: avg_days_since_last_activity
         sql: days_since_last_activity
-        type: average
+        type: avg
         description: count of contract coverage
 

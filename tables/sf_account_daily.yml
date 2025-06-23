@@ -213,6 +213,7 @@ tables:
         description: "id"
   
     measure:
+    
       - name: DISTINCT_DELETE_FLAG
         sql: DELETE_FLAG
         type: countDistinct
