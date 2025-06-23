@@ -212,9 +212,3 @@ tables:
         column:  MIGRATIONID 
         description: "id"
   
-    measure:
-    
-      - name: DISTINCT_DELETE_FLAG
-        sql: DELETE_FLAG
-        type: countDistinct
-        description: Total distinct delete flag
