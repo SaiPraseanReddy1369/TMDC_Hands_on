@@ -165,7 +165,7 @@ tables:
 
       - name: CALC_SP_NET_REVENUE 
         type: number
-        column: "{SP_LOCATION_ADVERTISER_CAMPAIGN.SP_NET_REVENUE}"
+        column: "{SP_LOCATION_ADVERTISER_CAMPAIGN.sp_net_revenue}"
         description: "sp_net_revenue"
 
       - name: CALC_DAYS_SINCE_LAST_ACTIVITY
