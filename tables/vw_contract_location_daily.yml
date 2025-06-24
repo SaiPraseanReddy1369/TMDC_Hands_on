@@ -174,5 +174,30 @@ tables:
         description: "no of days since last activity"
 
       
-    
+    measures:
+
+      - name: revenue_to_contract_ratio
+        sql: SUM({TABLE.sp_net_revenue}-{TABLE.contract_total_amt_usd}) 
+        type: number 
+        description: Average of days since last activity
+
+      - name: distinct_contract_number
+        sql: contract_number
+        type: countDistinct
+        description: distinct count
+
+      - name: distinct_location_id
+        sql: location_id
+        type: countDistinct
+        description: distinct count of location id
+
+      - name: contract_coverage_pct
+        sql: "{distinct_contract_number} / {distinct_location_id}"
+        type: count
+        description: count of contract coverage
+
+      - name: avg_days_since_last_activity
+        sql: days_since_last_activity
+        type: avg
+        description: count of contract coverage
    
