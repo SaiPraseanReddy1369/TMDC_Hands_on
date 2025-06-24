@@ -47,6 +47,7 @@ tables:
         type: string
         column: PRODUCT
         description: "Product"
+        primary_key: true
 
       - name: PRODUCT_DESCRIPTION
         type: string
