@@ -7,7 +7,7 @@ tables:
     joins:
       - name: ba_cpc_click
         relationship: one_to_many
-        sql: "{TABLE.PRODUCT} = {ba_cpc_click.PRODUCT}"
+        sql: "{TABLE.PRODUCT} = {ba_cpc_click.product}"
 
       - name: hs_product_groups
         relationship: one_to_many
@@ -19,8 +19,7 @@ tables:
 
       - name: sp_location_advertiser_campaign
         relationship: one_to_many
-        sql: "{TABLE.LOCATION_ID} = {sp_location_advertiser_campaign.LOCATION_ID} AND 
-              {TABLE.CONTRACT_NUMBER} = {sp_location_advertiser_campaign.CONTRACT_NUMBER}"
+        sql: "{TABLE.LOCATION_ID} = {sp_location_advertiser_campaign.location_id}"
 
     dimensions:
       - name: CONTRACT_NUMBER

@@ -56,12 +56,12 @@ tables:
         type: boolean
         column: mp_ota
         description: "mp_ota"
-		
+
       - name: campaign_calculated_status
         type: string
         column: campaign_calculated_status
         description: "campaign_calculated_status"
-		  
+        
       - name: selected_campaign
         type: number
         column: selected_campaign
