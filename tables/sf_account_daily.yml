@@ -125,7 +125,7 @@ tables:
 
       - name: LAST_PAID_PRICE_USD
         type: number
-        column:  LAST_PAID_PRICE_USD
+        column: LAST_PAID_PRICE_USD
         description: "usa pricing for last paid"
       
       - name: LATEST_ABANDON_CART
@@ -138,9 +138,9 @@ tables:
         column: LATEST_MARKETING_ENGAGEMENT
         description: "datetime column"
 
-      - name:  LEAD_SCORE_NEW 
+      - name: LEAD_SCORE_NEW 
         type: number
-        column:  LEAD_SCORE_NEW 
+        column: LEAD_SCORE_NEW 
         description: "new lead score"
 
       - name: PSP_CURRENCY_CODE
@@ -148,14 +148,14 @@ tables:
         column: PSP_CURRENCY_CODE
         description: "currency code"
 
-      - name:  OWNERID_18
+      - name: OWNERID_18
         type: string
-        column:  OWNERID_18
+        column: OWNERID_18
         description: "id"
 
-      - name:  SUB_REGION
+      - name: SUB_REGION
         type: string
-        column:  SUB_REGION
+        column: SUB_REGION
         description: "sub region details"
 
       - name: SERVICE_TIER
@@ -180,7 +180,7 @@ tables:
 
       - name: INDUSTRY
         type: string
-        column:   INDUSTRY
+        column: INDUSTRY
         description: "industry type"
 
       - name: HYBRID 
@@ -190,7 +190,7 @@ tables:
 
       - name: PARENT_BRAND
         type: string
-        column:  PARENT_BRAND
+        column: PARENT_BRAND
         description: "name of parent brand"
       
       - name: PIO_CREDIT_STATUS 
@@ -200,16 +200,16 @@ tables:
 
       - name: LATEST_OWNER_ENGAGEMENT 
         type: time
-        column:  LATEST_OWNER_ENGAGEMENT 
+        column: LATEST_OWNER_ENGAGEMENT 
         description: "datetime column"
 
       - name: ESTIMATED_CURRENT_VALUE
         type: number
-        column:  ESTIMATED_CURRENT_VALUE
+        column: ESTIMATED_CURRENT_VALUE
         description: "current value estimation"
 
       - name: MIGRATIONID  
         type: string
-        column:  MIGRATIONID 
+        column: MIGRATIONID 
         description: "id"
   

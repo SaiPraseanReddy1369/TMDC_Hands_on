@@ -159,10 +159,10 @@ tables:
         column: CONTRACT_TOTAL_AMT_USD
         description: "CONTRACT_TOTAL_AMT_USD"
 
-      - name: calc_contract_number
-        column: "{sp_location_advertiser_campaign.contract_number}"
-        type: string
-        description: "campaign contract number"
+      # - name: calc_contract_number
+      #   column: "{sp_location_advertiser_campaign.contract_number}"
+      #   type: string
+      #   description: "campaign contract number"
 
       - name: calc_sp_net_revenue
         column: "{sp_location_advertiser_campaign.sp_net_revenue}"
@@ -187,7 +187,7 @@ tables:
         description: total sp cc_sp_revenue
 
       - name: distinct_contract_number
-        sql: calc_contract_number
+        sql: CONTRACT_NUMBER
         type: count_distinct
         description: distinct count
 
@@ -201,7 +201,7 @@ tables:
         type: number
         description: count of contract coverage
 
-      - name: avg_days_since_last_activity
+      - name: avg_days_since_last_activity    # sf_account not working
         sql: ref_days_since_last_activity
         type: avg
         description: count of contract coverage

@@ -61,7 +61,7 @@ tables:
         type: string
         column: campaign_calculated_status
         description: "campaign_calculated_status"
-        
+
       - name: selected_campaign
         type: number
         column: selected_campaign
