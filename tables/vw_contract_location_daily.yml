@@ -5,19 +5,19 @@ tables:
     public: true
 
     joins:
-      - name: BA_CPC_CLICK
+      - name: ba_cpc_click
         relationship: one_to_many
         sql: "{TABLE.PRODUCT} = {BA_CPC_CLICK.PRODUCT}"
 
-      - name: HS_PRODUCT_GROUPS
+      - name: hs_product_groups
         relationship: one_to_many
         sql: "{TABLE.PRODUCT} = {HS_PRODUCT_GROUPS.SKU}"
 
-      - name: SF_ACCOUNT_DAILY
+      - name: sf_account_daily
         relationship: one_to_many
         sql: "{TABLE.LOCATION_ID} = {SF_ACCOUNT_DAILY.LOCATION_ID}"
 
-      - name: SP_LOCATION_ADVERTISER_CAMPAIGN
+      - name: sp_location_advertiser_campaign
         relationship: one_to_many
         sql: "{TABLE.LOCATION_ID} = {SP_LOCATION_ADVERTISER_CAMPAIGN.LOCATION_ID} AND 
               {TABLE.CONTRACT_NUMBER} = {SP_LOCATION_ADVERTISER_CAMPAIGN.CONTRACT_NUMBER}"
