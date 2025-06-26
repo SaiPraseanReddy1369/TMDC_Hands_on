@@ -159,45 +159,48 @@ tables:
         column: CONTRACT_TOTAL_AMT_USD
         description: "CONTRACT_TOTAL_AMT_USD"
 
-      - name: CALC_CONTRACT_NUMBER
+      - name: calc_contract_number
+        sql: "{sp_location_advertiser_campaign.contract_number}"
         type: string
-        column: "{sp_location_advertiser_campaign.contract_number}"
-        description: "contract number"
 
-      - name: CALC_SP_NET_REVENUE 
+      - name: calc_sp_net_revenue
+        sql: "{sp_location_advertiser_campaign.sp_net_revenue}"
         type: number
-        column: "{sp_location_advertiser_campaign.sp_net_revenue}"
-        description: "sp_net_revenue"
 
-      - name: CALC_DAYS_SINCE_LAST_ACTIVITY
+
+      - name: ref_days_since_last_activity
+        sql: "{sf_account_daily.DAYS_SINCE_LAST_ACTIVITY}"
         type: number
-        column: "{sf_account_daily.DAYS_SINCE_LAST_ACTIVITY}"
-        description: "no of days since last activity"
 
     measures:
 
-      - name: REVENUE_TO_CONTRACT_RATIO
-        sql: SUM({TABLE.CALC_SP_NET_REVENUE}-{TABLE.CONTRACT_TOTAL_AMT_USD})
+      - name: total_sp_net_revenue
+        sql: SUM({TABLE.calc_sp_net_revenue})
         type: number 
-        description: Average of days since last activity
+        description: total sp cc_sp_revenue
 
-      - name: DISTINCT_CONTRACT_NUMBER
-        sql: CALC_CONTRACT_NUMBER
+      - name: total_contract_total_amt_usd
+        sql: SUM({TABLE.CONTRACT_TOTAL_AMT_USD})
+        type: number 
+        description: total sp cc_sp_revenue
+
+      - name: distinct_contract_number
+        sql: calc_contract_number
         type: count_distinct
         description: distinct count
 
-      - name: DISTINCT_LOCATION_ID
+      - name: distinct_location_id
         sql: LOCATION_ID
         type: count_distinct
         description: distinct count of location id
 
-      - name: CONTRACT_COVERAGE_PCT
-        sql: "{DISTINCT_CONTRACT_NUMBER} / {DISTINCT_LOCATION_ID}"
+      - name: contract_coverage_pct
+        sql: "{distinct_contract_number} / {distinct_location_id}"
         type: number
         description: count of contract coverage
 
-      - name: AVG_DAYS_SINCE_LAST_ACTIVITY
-        sql: CALC_DAYS_SINCE_LAST_ACTIVITY
+      - name: avg_days_since_last_activity
+        sql: ref_days_since_last_activity
         type: avg
         description: count of contract coverage
       
