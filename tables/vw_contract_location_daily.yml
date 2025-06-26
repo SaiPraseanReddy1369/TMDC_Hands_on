@@ -162,17 +162,17 @@ tables:
 
       - name: CALC_CONTRACT_NUMBER
         type: string
-        column: "{SP_LOCATION_ADVERTISER_CAMPAIGN.contract_number}"
+        column: "{sp_location_advertiser_campaign.contract_number}"
         description: "contract number"
 
       - name: CALC_SP_NET_REVENUE 
         type: number
-        column: "{SP_LOCATION_ADVERTISER_CAMPAIGN.sp_net_revenue}"
+        column: "{sp_location_advertiser_campaign.sp_net_revenue}"
         description: "sp_net_revenue"
 
       - name: CALC_DAYS_SINCE_LAST_ACTIVITY
         type: number
-        column: "{SF_ACCOUNT_DAILY.DAYS_SINCE_LAST_ACTIVITY}"
+        column: "{sf_account_daily.DAYS_SINCE_LAST_ACTIVITY}"
         description: "no of days since last activity"
 
     measures:
