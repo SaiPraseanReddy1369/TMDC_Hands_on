@@ -200,14 +200,4 @@ tables:
         sql: "{distinct_contract_number} / {distinct_location_id}"
         type: number
         description: count of contract coverage
-
-      - name: avg_days_since_last_activity    # sf_account not working
-        sql: ref_days_since_last_activity
-        type: avg
-        description: count of contract coverage
-      
-      # - name: AVG_CONTRACT_FREE_TRIAL
-      #   sql: CONTRACT_FREE_TRIAL
-      #   type: avg
-      #   description: count of contract coverage
    
