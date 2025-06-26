@@ -178,7 +178,7 @@ tables:
     measures:
 
       - name: REVENUE_TO_CONTRACT_RATIO
-        sql: SUM({TABLE.CALC_SP_NET_REVENUE}-{TABLE.CONTRACT_TOTAL_AMT_USD}) 
+        sql: SUM({TABLE.CALC_SP_NET_REVENUE}-{TABLE.CONTRACT_TOTAL_AMT_USD})
         type: number 
         description: Average of days since last activity
 
@@ -202,8 +202,8 @@ tables:
         type: avg
         description: count of contract coverage
       
-      - name: AVG_CONTRACT_FREE_TRIAL
-        sql: CONTRACT_FREE_TRIAL
-        type: avg
-        description: count of contract coverage
+      # - name: AVG_CONTRACT_FREE_TRIAL
+      #   sql: CONTRACT_FREE_TRIAL
+      #   type: avg
+      #   description: count of contract coverage
    
