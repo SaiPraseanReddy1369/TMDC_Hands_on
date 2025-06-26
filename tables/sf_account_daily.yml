@@ -1,5 +1,5 @@
 tables:
-  - name: SF_ACCOUNT_DAILY
+  - name: sf_account_daily
     sql: {{ load_sql('sf_account_daily') }}
     description: Captures details of users and their visits
     public: true 
@@ -11,6 +11,7 @@ tables:
         column: ID
         description: "id"
         primary_key: true
+        public: true
 
       - name: DELETE_FLAG
         type: string

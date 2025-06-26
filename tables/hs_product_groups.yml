@@ -1,5 +1,5 @@
 tables:
-  - name: HS_PRODUCT_GROUPS
+  - name: hs_product_groups
     sql: {{ load_sql('hs_product_groups') }}
     description: Captures details of product groups
     public: true 
@@ -11,6 +11,7 @@ tables:
         column: ID
         description: "ID"
         primary_key: true
+        public: true
 
       - name: PRODUCT_CLASS
         type: string

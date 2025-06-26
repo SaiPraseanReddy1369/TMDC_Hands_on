@@ -1,5 +1,5 @@
 tables:
-  - name: SP_LOCATION_ADVERTISER_CAMPAIGN
+  - name: sp_location_advertiser_campaign
     sql: {{ load_sql('sp_location_advertiser_campaign') }}
     description: Captures details of advertisers and campaigns
     public: true 
@@ -10,6 +10,7 @@ tables:
         column: location_id
         description: "location id"
         primary_key: true
+        public: true 
 
       - name: sl_advertiser_id
         type: number

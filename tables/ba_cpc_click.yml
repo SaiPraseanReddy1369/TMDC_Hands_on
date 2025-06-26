@@ -1,5 +1,5 @@
 tables:
-  - name: BA_CPC_CLICK
+  - name: ba_cpc_click
     sql: {{ load_sql('ba_cpc_click') }}
     description: Captures details of ba clicks
     public: true 
@@ -11,6 +11,7 @@ tables:
         column: location_id
         description: "location id"
         primary_key: true
+        public: true
 
       - name: contract_number
         type: string

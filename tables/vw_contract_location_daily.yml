@@ -1,5 +1,5 @@
 tables:
-  - name: VW_CONTRACT_LOCATION_DAILY
+  - name: vw_contract_location_daily
     sql: {{ load_sql('vw_contract_location_daily') }}
     description: Table containing information about vw_contract_location_daily.
     public: true
@@ -48,6 +48,7 @@ tables:
         column: PRODUCT
         description: "Product"
         primary_key: true
+        public: true
 
       - name: PRODUCT_DESCRIPTION
         type: string
@@ -174,7 +175,6 @@ tables:
         column: "{SF_ACCOUNT_DAILY.DAYS_SINCE_LAST_ACTIVITY}"
         description: "no of days since last activity"
 
-      
     measures:
 
       - name: REVENUE_TO_CONTRACT_RATIO
@@ -184,17 +184,17 @@ tables:
 
       - name: DISTINCT_CONTRACT_NUMBER
         sql: CALC_CONTRACT_NUMBER
-        type: countDistinct
+        type: count_distinct
         description: distinct count
 
       - name: DISTINCT_LOCATION_ID
         sql: LOCATION_ID
-        type: countDistinct
+        type: count_distinct
         description: distinct count of location id
 
       - name: CONTRACT_COVERAGE_PCT
         sql: "{DISTINCT_CONTRACT_NUMBER} / {DISTINCT_LOCATION_ID}"
-        type: count
+        type: number
         description: count of contract coverage
 
       - name: AVG_DAYS_SINCE_LAST_ACTIVITY
