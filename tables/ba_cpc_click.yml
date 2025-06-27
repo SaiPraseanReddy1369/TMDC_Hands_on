@@ -10,8 +10,6 @@ tables:
         type: number
         column: location_id
         description: "location id"
-        primary_key: true
-        public: true
 
       - name: contract_number
         type: string
@@ -27,6 +25,8 @@ tables:
         type: string
         column: product
         description: "product name"
+        primary_key: true
+        public: true
 
       - name: ba_clicks
         type: number
